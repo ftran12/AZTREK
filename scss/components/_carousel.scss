@@ -1,0 +1,9 @@
+.zoom div img {
+    border-radius: 50%;
+	transform: scale(1);
+	transition: .3s ease-in-out;
+}
+.zoom div:hover img {
+    transform: scale(1.3);  
+    
+}

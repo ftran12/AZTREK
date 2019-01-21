@@ -1,0 +1,68 @@
+body {
+    font-family: $font-default;
+}
+
+ .h1-home {
+    font-family: $font-title;
+    font-size: 3rem;
+    color: $white;
+    @media (max-width: $bp-large) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: $bp-medium) {
+        font-size: 1rem;
+    }
+}
+
+h1 { 
+    font-family: $font-title;
+    font-size: 2rem;
+    color: $orange;
+    @media (max-width: $bp-large) {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: $bp-medium) {
+        font-size: 1rem;
+    }
+    text-align: center;;    
+}
+h1 ,h2 {
+    color: $blue;
+}
+
+
+h2,
+h3 {
+    font-family: $font-title;
+}
+
+h4 {
+    font-family: $font-default; 
+}
+.title-voyage,  {
+    font-family: $font-default;
+    color: $white;
+}
+
+.btn a {
+    font-family: $font-default;
+    text-decoration: underline;
+
+}
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+
+ 
+.site-title {
+    font-size: 0;
+}

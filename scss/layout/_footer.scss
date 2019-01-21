@@ -1,0 +1,36 @@
+
+
+.footer-content {
+    background-color: $dark-brown;
+    padding: 10px;
+    border-color: grey;
+    position: relative;
+
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-infos {
+    max-width: 300px;
+    color: $white;
+    font-size: 0.75rem;
+
+}
+
+.social-nav {
+    align-self: flex-end;
+    padding-right: 300px;
+    font-size: 0;
+    padding: 20px;
+
+    ul {
+        display: flex;
+        margin: right;
+
+
+    }
+}

@@ -1,0 +1,17 @@
+// Puces
+
+@mixin puce($size, $bgColor) {
+
+  display: flex;
+  align-items: center;
+  // centre les puces avec le texte 
+  &::before {
+    content: '';
+    display: inline-block;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background-color: $bgColor;
+    margin-right: $size;
+  }
+}
