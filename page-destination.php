@@ -2,49 +2,35 @@
 require_once "model/database.php";
 require_once "functions.php";
 
-
-$destination = getAllSejoursByPays($id);
-
-
+$id = $_GET["id"];
+$destination = getOneEntity("destination", $id);
+$sejours = getAllSejoursByPays($id);
 
 getHeader("Accueil", "Aztrek")
 ?>
 
 
-    <body class="home-1">
-<header class="page-header">
-
-    <?php getMenu(); ?>
-</header>
-<main>
+    <header class="page-header">
+        <?php getMenu(); ?>
+    </header>
 
     <h1>Destination : <?= $destination["titre"]; ?></h1>
 
     <section class="container section-destinations">
-        <h2>Nos Séjours au Mexique</h2>
-      
+        <h2>Nos Séjours au <?= $destination["titre"]; ?></h2>
+
         <div class="destinations-content">
 
-          <article class="sejour-teasing">
-            <h3 class="circuit-name">Trésors de Yucatan</h3>
-            <a href="page-sejour.php"><img src="uploads/tresors_yucatan.jpg" alt="Sejour">
-            </a>
-          </article>
-           
-          <article class="sejour-teasing">
-            <h3 class="circuit-name">Volcans</h3>
-            <a href="page-sejour.php"><img src="uploads/volcans.jpg" alt="Sejour">
-            </a>
-          </article>
+            <?php foreach ($sejours as $sejour) : ?>
+                <article class="sejour-teasing">
+                    <h3 class="circuit-name"><?= $sejour["titre"]; ?></h3>
+                    <a href="page-sejour.php"><img src="uploads/<?= $sejour["image"]; ?>" alt="Sejour">
+                    </a>
+                </article>
+            <?php endforeach; ?>
 
-          <article class="sejour-teasing">
-            <h3 class="circuit-name">Caminando Mexico</h3>
-            <a href="page-sejour.php"><img src="uploads/caminando.jpg" alt="Sejour">
-            </a>
-          </article>
-         
         </div>
     </section>
 
 
-      <?php getFooter(); ?>
+<?php getFooter(); ?>
