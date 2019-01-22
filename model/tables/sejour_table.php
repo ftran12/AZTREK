@@ -11,7 +11,8 @@ function getOneSejour(int $id): array
     SELECT
         sejour.*,
         destination.titre AS destination,
-        difficulte.libelle AS difficulte
+        difficulte.libelle AS difficulte,
+        depart.date_depart AS date_depart
     FROM sejour
     INNER JOIN destination ON sejour.destination_id = destination.id 
     INNER JOIN difficulte ON sejour.difficulte_id = difficulte.id
