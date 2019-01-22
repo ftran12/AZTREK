@@ -24,7 +24,7 @@ getHeader("Accueil", "Aztrek")
             <?php foreach ($sejours as $sejour) : ?>
                 <article class="sejour-teasing">
                     <h3 class="circuit-name"><?= $sejour["titre"]; ?></h3>
-                    <a href="page-sejour.php"><img src="uploads/<?= $sejour["image"]; ?>" alt="Sejour">
+                    <a href="page-sejour.php?id=<?= $sejour["id"]; ?>"><img src="uploads/<?= $sejour["image"]; ?>" alt="Sejour">
                     </a>
                 </article>
             <?php endforeach; ?>

@@ -2,9 +2,8 @@
 require_once '../../security.php';
 require_once '../../../model/database.php';
 
-$id = $_POST['id'];
-$libelle = $_POST['libelle'];
+$titre = $_POST['titre'];
 
-updateCategorie($id, $libelle);
+insertDestination($titre);
 
 header('Location: index.php');

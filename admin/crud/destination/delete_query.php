@@ -4,7 +4,7 @@ require_once '../../../model/database.php';
 
 $id = $_POST['id'];
 
-$error = deleteEntity("categorie", $id);
+$error = deleteEntity("destination", $id);
 
 if ($error) {
     header('Location: index.php?errcode=' . $error->getCode());

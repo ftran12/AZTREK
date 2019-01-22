@@ -2,6 +2,9 @@
 require_once __DIR__. "/../config/parameters.php";
 require_once __DIR__. "/../model/database.php";
 $destinations = getAllEntities("destination");
+$user = getCurrentUser();
+
+
 ?>
 
 
@@ -36,7 +39,12 @@ $destinations = getAllEntities("destination");
     </div>
 
     <ul class="account">
-        <li> <a href="#"><img src="images/pictos/user.png" alt="compte"></a></li>
+        <?php if(isset($user)) : ?>
+        <li><a href="#"><img src="images/pictos/user.png" alt="compte"><?= $user["pseudo"]; ?></a></li>
+        <li><a href="<?= SITE_ADMIN ; "logout.php"; ?>"><i class="fa fa-sign-out"></i>Déconnexion</a></li>
+        <?php else: ?>
+        <li><a href="<?= SITE_ADMIN; ?>"><i class="fa fa-sign-in"></i>Connexion</a></li>
+        <?php endif; ?>
         <li><a href="#"><img src="images/pictos/contact.png" alt="contact"></a></li>
     </ul>
 
