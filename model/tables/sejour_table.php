@@ -28,3 +28,41 @@ function getOneSejour(int $id): array
 
 }
 
+function getAllSejour()
+{
+    global $connection;
+
+    $query = "SELECT * 
+    FROM sejour";
+
+    $stmt = $connection->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchALL();
+
+
+}
+
+function insertSejour(string $titre, string $image,int $duree, string $description,  int $difficulte_id, int $destination_id,  int $prix_indicatif)
+{
+    global $connection;
+
+    $query = "
+    INSERT INTO sejour (titre, image, duree, description, difficulte_id, destination_id, prix_indicatif)
+    VALUES (:titre, :image, :duree, :description, :difficulte_id, :destination_id, :prix_indicatif)
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":titre", $titre);
+    $stmt->bindParam(":image", $image);
+    $stmt->bindParam(":duree", $duree);
+    $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":difficulte_id", $difficulte_id);
+    $stmt->bindParam(":destination_id", $destination_id);
+    $stmt->bindParam(":prix_indicatif", $prix_indicatif);
+
+    $stmt->execute();
+}
+
+
+
+

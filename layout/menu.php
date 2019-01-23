@@ -32,7 +32,7 @@ $user = getCurrentUser();
 
                 </ul>
             </li>
-            <li><a href="#">Voyages</a></li>
+            <li><a href="page-voyage.php">Voyages</a></li>
             <li><a href="#">Communauté</a></li>
             <li><a href="#">Aztrek</a></li>
         </ul>

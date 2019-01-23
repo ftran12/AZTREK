@@ -12,3 +12,18 @@
     }
 
 }
+
+.btn-off {
+    display: inline-block;
+    padding: .875rem 2rem;
+    background-color: $dark-grey;
+    color: black;
+    border-radius: 4px;
+    transition: .3s;
+
+    &:hover, &:focus {
+        background-color: darken($dark-grey, 20%);
+        text-decoration: none;
+    }
+
+}

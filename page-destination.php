@@ -33,7 +33,7 @@ getHeader("Accueil", "Aztrek")
 
             </div>
         <?php else: ?>
-            <p>Pas de séjour actuellement, patience...</p>
+            <h4>Pas de séjour actuellement, patience...</h4>
         <?php endif; ?>
 
 
