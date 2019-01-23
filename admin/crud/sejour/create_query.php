@@ -3,7 +3,7 @@ require_once '../../security.php';
 require_once '../../../model/database.php';
 
 $titre = $_POST['titre'];
-$categorie_id = $_POST['categorie_id'];
+$destination_id = $_POST['destination_id'];
 $description = $_POST['description'];
 $description_courte = $_POST['description_courte'];
 $couverts = $_POST['couverts'];

@@ -27,7 +27,9 @@ getHeader("Accueil", "Aztrek")
             <div class="tarif"><a href="#"><i class="fas fa-euro-sign"></i></a> à
                 partir <?= $sejour["prix_indicatif"]; ?>€
             </div>
-            <div class="niveau"><a href="#"><i class="fas fa-signal"></i></a> <?= $sejour["difficulte_libelle"]; ?> (niveau <?= $sejour["difficulte_niveau"]; ?>/5)</div>
+            <div class="niveau"><a href="#"><i class="fas fa-signal"></i></a> <?= $sejour["difficulte_libelle"]; ?>
+                (niveau <?= $sejour["difficulte_niveau"]; ?>/5)
+            </div>
         </header>
 
         <div class="img-wrapper">
@@ -39,7 +41,7 @@ getHeader("Accueil", "Aztrek")
 
     </article>
 </section>
-
+<?php if (count($departs) > 0) : ?>
 <table>
     <tr>
         <th>Date de départ</th>
@@ -49,16 +51,20 @@ getHeader("Accueil", "Aztrek")
         <th>Réservez dès maintenant</th>
     </tr>
     <?php foreach ($departs as $depart) : ?>
-    <tr>
+        <tr>
             <td><?= $depart["date_depart_format"]; ?></td>
             <td><?= $depart["date_retour_format"]; ?></td>
             <td><?= $depart["prix"]; ?> €</td>
-            <td>14</td>
+        <?php if ($depart["places"] > 0) : ?>
+            <td><?= $depart["places"]; ?></td>
+        <?php else: ?><td>plus de place</td><?php endif; ?>
             <td><a href="#">S'INSCRIRE</a></td>
 
-    </tr>
- <?php endforeach; ?>
-
+        </tr>
+    <?php endforeach; ?>
 </table>
+<?php else: ?>
+    <p>Plus de séjour disponible pour cette destination</p>
+<?php endif; ?>
 
 <?php getFooter(); ?>

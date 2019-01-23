@@ -19,17 +19,24 @@ getHeader("Accueil", "Aztrek")
     <section class="container section-destinations">
         <h2>Nos Séjours au <?= $destination["titre"]; ?></h2>
 
-        <div class="destinations-content">
+        <?php if (count($sejours) > 0) : ?>
+            <div class="destinations-content">
 
-            <?php foreach ($sejours as $sejour) : ?>
-                <article class="sejour-teasing">
-                    <h3 class="circuit-name"><?= $sejour["titre"]; ?></h3>
-                    <a href="page-sejour.php?id=<?= $sejour["id"]; ?>"><img src="uploads/<?= $sejour["image"]; ?>" alt="Sejour">
-                    </a>
-                </article>
-            <?php endforeach; ?>
+                <?php foreach ($sejours as $sejour) : ?>
+                    <article class="sejour-teasing">
+                        <h3 class="circuit-name"><?= $sejour["titre"]; ?></h3>
+                        <a href="page-sejour.php?id=<?= $sejour["id"]; ?>"><img src="uploads/<?= $sejour["image"]; ?>"
+                                                                                alt="Sejour">
+                        </a>
+                    </article>
+                <?php endforeach; ?>
 
-        </div>
+            </div>
+        <?php else: ?>
+            <p>Pas de séjour actuellement, patience...</p>
+        <?php endif; ?>
+
+
     </section>
 
 

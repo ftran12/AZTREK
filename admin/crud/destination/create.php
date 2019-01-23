@@ -1,6 +1,6 @@
 <?php require_once '../../layout/header.php'; ?>
 
-<h1>Ajout d'une destinatione</h1>
+<h1>Ajout d'une destination</h1>
 
 <form action="create_query.php" method="POST">
     <div class="form-group">

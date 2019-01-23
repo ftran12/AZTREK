@@ -2,7 +2,7 @@
 require_once '../../../model/database.php';
 
 $id = $_GET['id'];
-$photo = getOneEntity("recette", $id);
+$photo = getOneEntity("sejour", $id);
 $liste_destinations = getAllEntities("destination");
 $liste_tags = getAllEntities("tag");
 

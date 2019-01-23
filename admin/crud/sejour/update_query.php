@@ -8,7 +8,7 @@ $photo = getPhoto($id);
 
 $titre = $_POST['titre'];
 $description = $_POST['description'];
-$categorie_id = $_POST['categorie_id'];
+$destination_id = $_POST['destination_id'];
 $tag_ids = isset($_POST['tag_ids']) ? $_POST['tag_ids'] : [];
 
 // Upload de l'image

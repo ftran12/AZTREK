@@ -9,27 +9,22 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo isActive("/crud/recette/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/recette/">
-                    <i class="fa fa-cutlery"></i>
-                    Recettes
-                </a>
+                <a class="nav-link <?php echo isActive("/crud/sejour/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/sejour/">
+                    <i class="fa fa-suitcase"></i>Sejours
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo isActive("/crud/categorie/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/categorie/">
-                    <i class="fa fa-book"></i>
-                    Catégories
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-tags"></i>
-                    Tags
+                <a class="nav-link <?php echo isActive("/crud/destination/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/destination/">
+                    <i class="fas fa-map-marked-alt"></i>Destinations
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fa fa-comments"></i>
-                    Commentaires
+                    <i class="fa fa-tags"></i>Tags
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-comments"></i>Commentaires
                 </a>
             </li>
         </ul>
