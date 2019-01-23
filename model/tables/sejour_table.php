@@ -42,7 +42,8 @@ function getAllSejour()
 
 }
 
-function insertSejour(string $titre, string $image,int $duree, string $description,  int $difficulte_id, int $destination_id,  int $prix_indicatif)
+function insertSejour(string $titre, string $image,int $duree, string $description,
+                      int $difficulte_id, int $destination_id,  int $prix_indicatif)
 {
     global $connection;
 

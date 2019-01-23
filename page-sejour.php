@@ -38,9 +38,9 @@ getHeader("Accueil", "Aztrek")
             <div class="descr-voyage">
                 <p><?= $sejour["description"]; ?></p>
 
-
         </article>
     </section>
+
 <?php if (count($departs) > 0) : ?>
     <table class="sejour_dispo">
         <tr>
@@ -65,7 +65,7 @@ getHeader("Accueil", "Aztrek")
         <?php if ($depart["places"] > 0): ?>
                 <td ><a class="btn" href="#">S'INSCRIRE</a></td>
         <?php else : ;?>
-            <td ><a class="btn-off" href="#">EPUISE</a></td>
+            <td ><a href="#">EPUISE</a></td>
         <?php endif; ?>
             </tr>
             <?php endforeach; ?>

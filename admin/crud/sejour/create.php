@@ -2,11 +2,12 @@
 require_once '../../../model/database.php';
 
 $destinations = getAllEntities("destination");
+$difficulte = getAllEntities("difficulte");
 
 require_once '../../layout/header.php';
 ?>
 
-<h1>Ajout d'une photo</h1>
+<h1>Ajout d'un séjour</h1>
 
 <form action="create_query.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
@@ -32,24 +33,22 @@ require_once '../../layout/header.php';
         <textarea name="description" class="form-control"></textarea>
     </div>
     <div class="form-group">
-        <label>Description courte</label>
-        <input type="text" name="description_courte" class="form-control" placeholder="Description courte" required>
+        <label>Durée</label>
+        <input type="number" name="duree" class="form-control" required>
     </div>
     <div class="form-group">
-        <label>Nombre de couverts</label>
-        <input type="number" name="couverts" class="form-control" required>
+        <label>Difficulté</label>
+        <select name="difficulte_id" class="form-control">
+            <?php foreach ($difficulte as $difficulte) : ?>
+                <option value="<?php echo $difficulte["id"]; ?>">
+                    <?php echo $difficulte["niveau"]; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
     </div>
     <div class="form-group">
-        <label>Temps de preparation</label>
-        <input type="time" name="temps_prepa" class="form-control" required>
-    </div>
-    <div class="form-group">
-        <label>Temps de cuisson</label>
-        <input type="time" name="temps_cuisson" class="form-control" required>
-    </div>
-    <div class="form-group form-check">
-        <input type="checkbox" name="publie" class="form-check-input" required>
-        <label>Publié ?</label>
+        <label>Prix</label>
+        <input type="number" name="prix_indicatif" class="form-control" required>
     </div>
     <button type="submit" class="btn btn-success">
         <i class="fa fa-check"></i>

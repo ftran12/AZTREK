@@ -10,21 +10,26 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link <?php echo isActive("/crud/sejour/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/sejour/">
-                    <i class="fa fa-suitcase"></i>Sejours
+                    <i class="fa fa-suitcase"></i>
+                    Séjour
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?php echo isActive("/crud/destination/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/destination/">
-                    <i class="fas fa-map-marked-alt"></i>Destinations
+                    <i class="fa fa-globe"></i>
+                    Destinations
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fa fa-tags"></i>Tags
+                    <i class="fa fa-tags"></i>
+                    Tags
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fa fa-comments"></i>Commentaires
+                    <i class="fa fa-comments"></i>
+                    Commentaires
                 </a>
             </li>
         </ul>

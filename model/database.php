@@ -1,6 +1,6 @@
 <?php
+
 require_once __DIR__ . "/../config/parameters.php";
-// /var/www/dcpro10/php/cookingchef/model
 
 try {
     $connection = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS, [
@@ -20,22 +20,29 @@ foreach ($files as $filepath) {
 }
 
 
-function getOneEntity(string $table, int $id): array
+function getAllEntities(string $table)
 {
-
     global $connection;
 
-    $query = "SELECT * FROM $table
-    WHERE id = :id";
+    $query = "SELECT *  FROM $table";
 
+    $stmt = $connection->prepare($query);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+function getOneEntity(string $table, int $id): array
+{
+    global $connection;
+
+    $query = "SELECT *  FROM $table WHERE id = :id";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":id", $id);
     $stmt->execute();
 
-//    fetch tout court car on ne recupere qu'une seule donnée
     return $stmt->fetch();
-
 }
 
 
@@ -43,8 +50,7 @@ function deleteEntity(string $table, int $id)
 {
     global $connection;
 
-    $query = "DELETE FROM $table
-    WHERE id = :id";
+    $query = "DELETE FROM $table WHERE id = :id";
 
 
     $stmt = $connection->prepare($query);
@@ -56,27 +62,4 @@ function deleteEntity(string $table, int $id)
         return $exception;
     }
     return null;
-
 }
-
-function getAllEntities(string $table)
-{
-
-    global $connection;
-
-    $query = "SELECT * FROM $table";
-
-
-    $stmt = $connection->prepare($query);
-    $stmt->execute();
-
-    return $stmt->fetchAll();
-
-}
-
-
-
-
-
-
-

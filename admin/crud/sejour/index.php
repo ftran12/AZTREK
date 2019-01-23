@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 
-$sejours = getOneSejour();
+$sejours = getAllSejour();
 
 $error_msg = null;
 if (isset($_GET['errcode'])) {
@@ -40,9 +40,10 @@ require_once '../../layout/header.php';
         <tr>
             <th>Titre</th>
             <th>Image</th>
+            <th>Durée</th>
+            <th>Prix</th>
+            <th>Description</th>
             <th>Destination</th>
-            <th>Auteur</th>
-            <th>Date de création</th>
             <th class="actions">Actions</th>
         </tr>
     </thead>
@@ -53,9 +54,10 @@ require_once '../../layout/header.php';
                 <td>
                     <img src="../../../uploads/<?php echo $sejour['image']; ?>" class="img-thumbnail">
                 </td>
-                <td><?php echo $sejour['destination']; ?></td>
-                <td><?php echo $sejour['pseudo']; ?></td>
-                <td><?php echo $sejour['date_creation_format']; ?></td>
+                <td><?php echo $sejour['duree']; ?></td>
+                <td><?php echo $sejour['prix_indicatif']; ?></td>
+                <td><?php echo $sejour['description']; ?></td>
+                <td><?php echo $sejour['destination_id']; ?></td>
                 <td class="actions">
                     <a href="update.php?id=<?php echo $sejour['id']; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
