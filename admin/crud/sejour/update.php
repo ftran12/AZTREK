@@ -3,7 +3,7 @@ require_once '../../../model/database.php';
 
 $id = $_GET['id'];
 $photo = getOneEntity("recette", $id);
-$liste_categories = getAllEntities("categorie");
+$liste_destinations = getAllEntities("destination");
 $liste_tags = getAllEntities("tag");
 
 $photo_liste_tags = getAllTagsByPhoto($id);
@@ -34,10 +34,10 @@ require_once '../../layout/header.php';
         <textarea name="description" class="form-control"><?php echo $photo["description"]; ?></textarea>
     </div>
     <div class="form-group">
-        <label>Catégorie</label>
+        <label>Destination</label>
         <select name="categorie_id" class="form-control">
-            <?php foreach ($liste_categories as $categorie) : ?>
-                <?php $selected = ($categorie["id"] == $photo["categorie_id"]) ? "selected" : ""; ?>
+            <?php foreach ($liste_destinations as $destination) : ?>
+                <?php $selected = ($destination["id"] == $photo["destination_id"]) ? "selected" : ""; ?>
                 <option value="<?php echo $categorie["id"]; ?>" <?php echo $selected; ?>>
                     <?php echo $categorie["titre"]; ?>
                 </option>

@@ -1,18 +1,5 @@
 <?php
 
-//function insertDestination(string $titre)
-//{
- //   global $connection;
-
-//    $query = "INSERT INTO  destination(titre) VALUE  (:titre)";
-
- //   $stmt = $connection->prepare($query);
- //   $stmt->bindParam(":titre", $titre);
- //   $stmt->execute();//
-
-
-
-//}
 
 function getAllSejoursByPays(int $id)
 {

@@ -1,9 +1,6 @@
 <?php
 
-/**
- * @param int $id
- * @return array
- */
+
 function getOneSejour(int $id): array
 {
     global $connection;
@@ -11,7 +8,8 @@ function getOneSejour(int $id): array
     SELECT
         sejour.*,
         destination.titre AS destination,
-        difficulte.libelle AS difficulte,
+        difficulte.libelle AS difficulte_libelle,
+        difficulte.niveau AS difficulte_niveau,
         depart.date_depart AS date_depart
     FROM sejour
     INNER JOIN destination ON sejour.destination_id = destination.id 
@@ -27,6 +25,34 @@ function getOneSejour(int $id): array
     $stmt->execute();
 
     return $stmt->fetch();
+
+}
+
+function getAllDepartBySejour($id)
+{
+
+    global $connection;
+    $query = "
+    SELECT
+        sejour.*,
+        DATE_FORMAT(depart . date_depart, '%d-%m-%Y') AS date_depart_format,
+        depart.date_depart AS date_depart,
+        depart.prix AS prix,
+        DATE_FORMAT(ADDDATE(depart.date_depart, sejour.duree), '%d-%m-%Y') AS date_retour_format
+        
+      
+    FROM sejour
+    LEFT JOIN depart ON sejour.id = depart.sejour_id
+    LEFT JOIN depart_has_utilisateur dhu on depart.id = dhu.depart_id 
+    WHERE sejour.id = :id  
+  
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
 
 }
 

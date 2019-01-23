@@ -5,17 +5,18 @@ require_once "functions.php";
 
 $id = $_GET["id"];
 $sejour = getOneSejour($id);
+$destination = getOneEntity("destination", $id);
+$departs = getAllDepartBySejour($id);
 
 
 getHeader("Accueil", "Aztrek")
 ?>
-
     <body class="home-1">
 <header class="page-header">
 
     <?php getMenu(); ?>
 </header>
-
+<h2>Destination : <?= $destination["titre"]; ?></h2>
 <h1><?= $sejour["titre"]; ?></h1>
 
 <section class="container section-sejours">
@@ -26,7 +27,7 @@ getHeader("Accueil", "Aztrek")
             <div class="tarif"><a href="#"><i class="fas fa-euro-sign"></i></a> à
                 partir <?= $sejour["prix_indicatif"]; ?>€
             </div>
-            <div class="niveau"><a href="#"><i class="fas fa-signal"></i></a> <?= $sejour["difficulte"]; ?></div>
+            <div class="niveau"><a href="#"><i class="fas fa-signal"></i></a> <?= $sejour["difficulte_libelle"]; ?> (niveau <?= $sejour["difficulte_niveau"]; ?>/5)</div>
         </header>
 
         <div class="img-wrapper">
@@ -45,23 +46,18 @@ getHeader("Accueil", "Aztrek")
         <th>Date de retour</th>
         <th>Prix</th>
         <th>Places restantes</th>
-        <th>Selection</th>
+        <th>Réservez dès maintenant</th>
     </tr>
+    <?php foreach ($departs as $depart) : ?>
     <tr>
-        <td>15/02/2019</td>
-        <td>15/02/2019</td>
-        <td>3090€</td>
-        <td>14</td>
-        <td><a href="#">S'INSCRIRE</a></td>
-    </tr>
-    <tr>
-        <td>15/02/2019</td>
-        <td>15/02/2019</td>
-        <td>3090€</td>
-        <td>7</td>
-        <td><a href="#">S'INSCRIRE</a></td>
-    </tr>
+            <td><?= $depart["date_depart_format"]; ?></td>
+            <td><?= $depart["date_retour_format"]; ?></td>
+            <td><?= $depart["prix"]; ?> €</td>
+            <td>14</td>
+            <td><a href="#">S'INSCRIRE</a></td>
 
+    </tr>
+ <?php endforeach; ?>
 
 </table>
 
