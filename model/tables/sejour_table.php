@@ -43,7 +43,7 @@ function getAllSejour()
 }
 
 function insertSejour(string $titre, string $image, int $duree, string $description,
-                      int $difficulte_id, int $destination_id,  int $prix_indicatif)
+                      int $difficulte_id, int $destination_id, int $prix_indicatif)
 {
     global $connection;
 
@@ -65,12 +65,13 @@ function insertSejour(string $titre, string $image, int $duree, string $descript
 }
 
 
-function updateSejour(int $id, string $titre, string $image,  string $description,
-                      int $destination_id)
+function updateSejour(int $id, string $titre, string $duree, string $image, string $description, string $difficulte_id,
+                      int $destination_id, string $prix_indicatif)
 {
     global $connection;
     $query = "UPDATE sejour 
-    SET titre = :titre, image = :image, description = :description, destination_id = :destination_id
+    SET titre = :titre, image = :image, duree = :duree, description = :description, difficulte_id = :difficulte_id, 
+    destination_id = :destination_id, prix_indicatif = :prix_indicatif
     WHERE id = :id
     ";
 
@@ -78,11 +79,11 @@ function updateSejour(int $id, string $titre, string $image,  string $descriptio
     $stmt->bindParam(":id", $id);
     $stmt->bindParam(":titre", $titre);
     $stmt->bindParam(":image", $image);
-   // $stmt->bindParam(":duree", $duree);
+    $stmt->bindParam(":duree", $duree);
     $stmt->bindParam(":description", $description);
-    //$stmt->bindParam(":difficulte_id", $difficulte_id);
+    $stmt->bindParam(":difficulte_id", $difficulte_id);
     $stmt->bindParam(":destination_id", $destination_id);
-    //$stmt->bindParam(":prix_indicatif", $prix_indicatif);
+    $stmt->bindParam(":prix_indicatif", $prix_indicatif);
 
     $stmt->execute();
 }

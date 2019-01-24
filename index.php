@@ -129,7 +129,7 @@ getHeader("Accueil", "Aztrek")
                         <div class="nuitees"><a href="#"><img src="images/pictos/calendar_grey@2x.png" alt="#"></a>7
                             nuits
                         </div>
-                        <div class="tarif">à partir de <br> 1999€</div>
+                        <p class="tarif">à partir de <br> <span class="prix">1999€</span></p>
                     </div>
                 </footer>
             </article>
@@ -163,9 +163,13 @@ getHeader("Accueil", "Aztrek")
                             </li>
                         </ul>
                     </div>
-                    <div class="nuitees"><a href="#"><img src="images/pictos/calendar_grey@2x.png" alt="#"></a>10 nuits
+                    <div class="info-sejour">
+                        <div class="nuitees"><a href="#"><img src="images/pictos/calendar_grey@2x.png" alt="#"></a>10
+                            nuits
+                        </div>
+
+                        <p class="tarif">à partir de <br><span class="prix">3299€</span></p>
                     </div>
-                    <div class="tarif">à partir de <br> 3299€</div>
                 </footer>
             </article>
 
@@ -199,16 +203,20 @@ getHeader("Accueil", "Aztrek")
                             </li>
                         </ul>
                     </div>
-                    <div class="nuitees">14 nuits<a href="#"><img src="images/pictos/calendar_grey@2x.png" alt=""></a>
+                    <div class="info-sejour">
+                        <div class="nuitees"><a href="#"><img src="images/pictos/calendar_grey@2x.png" alt=""></a>
+                            14 nuits
+                        </div>
+                        <p class="tarif">à partir de <br> <span class="prix">2999€</span></p>
                     </div>
-                    <div class="tarif">2999€</div>
                 </footer>
             </article>
 
             <article class="voyage-item">
                 <div class="voyage-sejour"><a href="#"></a>
                     <div class="social-actions">
-                        <div class="like"><a href="#"> <img src="images/pictos/heart.png" alt="like"></a></div>
+                        <div class="like"><a href="<?= SITE_URL . "create_account.php"; ?>"> <img
+                                        src="images/pictos/heart.png" alt="like"></a></div>
                         <div class="share"><a href="#"> <img src="images/pictos/share.png" alt="share"></a></div>
                     </div>
                     <a href="#">
@@ -236,15 +244,20 @@ getHeader("Accueil", "Aztrek")
                             </li>
                         </ul>
                     </div>
-                    <div class="nuitees"><a href="#"><img src="images/pictos/calendar_grey@2x.png" alt="#"></a>12 nuits
+                    <div class="info-sejour">
+                        <div class="nuitees"><a href="#"><img src="images/pictos/calendar_grey@2x.png" alt="#"></a>12
+                            nuits
+                        </div>
+                        <p class="tarif">à partir de <br><span class="prix">1899€</span></p>
                     </div>
-                    <div class="tarif">à partir de <br> 1899€</div>
-
                 </footer>
             </article>
         </div>
 
-        <button class= "btn" type="button" name="submit-btn">LIRE LA SUITE</button>
+        <div class="btn-wrapper">
+            <a href="#">Lire la suite</a>
+        </div>
+
     </section>
     </section>
 
@@ -253,14 +266,14 @@ getHeader("Accueil", "Aztrek")
             <h2>Nos destinations</h2>
             <div class="owl-dest owl-carousel owl-theme">
                 <?php foreach ($destinations as $destination) : ?>
-                <article class="item zoom">
-                    <div class="item-img"><a href="page-destination.php?id=<?= $destination["id"]; ?>">
-                    <img src="/images/destination_<?= $destination["titre"]; ?>.jpg" alt=""></a></div>
-                    <div class="item-infos"><a href="page-destination.php?id=<?= $destination["id"]; ?>">
-                            <h3><?= $destination["titre"]; ?></h3>
-                        </a>
-                    </div>
-                </article>
+                    <article class="item zoom">
+                        <div class="item-img"><a href="page-destination.php?id=<?= $destination["id"]; ?>">
+                                <img src="images/<?= $destination["image"]; ?>" alt="Destination"></a></div>
+                        <div class="item-infos"><a href="page-destination.php?id=<?= $destination["id"]; ?>">
+                                <h3><?= $destination["titre"]; ?></h3>
+                            </a>
+                        </div>
+                    </article>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -277,15 +290,16 @@ getHeader("Accueil", "Aztrek")
                 <article class="temoignage">
                     <div class="pic-tem"><a href="#"><img src="images/temoignage-1.jpg" alt=""></a></div>
                     <h4>Fibrou</h4>
-                    <h6>Costa Rica - Jungle Speed <br> Voyage le 16 août 2018</h6>
-                    <p class="tem-1">Super voyage ! on a particulièrement apprécié l’organisation du trek et le guide
-                        Daniel qui nous a montré des spots hors des sentiers battus. Je recommande l’agence Aztrek qui
+                    <div class="tem-infos"><h6>Costa Rica - Jungle Speed <br> Voyage le 16 août 2018</h6></div>
+                    <p class="tem-1">"Super voyage ! on a particulièrement apprécié l’organisation du trek et le guide
+                        Daniel qui nous a montré des spots hors des sentiers battus. Je recommande l’agence Aztrek qui a
+                        été très réactive lorsque nous avions eu besoin de la contacter.
                 </article>
 
                 <article class="temoignage">
                     <div class="pic-tem"><a href="#"><img src="images/temoignage-2.jpg" alt=""></a></div>
                     <h4>JCT</h4>
-                    <h6>Guatemala - Quetzal Sensation <br> Voyage le 12 juillet 2018</h6>
+                    <div class="tem-infos"><h6>Guatemala - Quetzal Sensation <br> Voyage le 12 juillet 2018</h6></div>
                     <p class="tem-2">
                         Rien à dire, la programmation était bien ficelée, chaque jour a son lot de bonnes
                         surprises. Super pays, à recommander.
@@ -294,7 +308,7 @@ getHeader("Accueil", "Aztrek")
 
             </div>
 
-            <div class="btn"><a href="#"></a>LIRE TOUS LES TEMOIGNAGES</a></div>
+            <div class="btn-wrapper"><a href="#">LIRE TOUS LES TEMOIGNAGES</a></div>
 
         </div>
 
@@ -316,17 +330,13 @@ getHeader("Accueil", "Aztrek")
                     <div class="blogger"><a href="images/blogger.jpg"></a>Par Emilie Colin</div>
                     <div class="blog-img"><a href="#"><img src="images/blog-img.jpg" alt=""></a></div>
                     <p>Voyager en fauteuil, s’installer temporairement en Amérique centrale, tout ça seul(e) et bien ça
-                        se
-                        fait.
-                        Il faut juste se poser les bonnes questions : quelles sont mes limites ? Quels sont mes besoins
-                        ?
-                        Ne pas oublier surtout qu’il faudra vous construire ce voyage vous-même. Les informations se
-                        font rares
-                        sur
-                        la toile,
+                        se fait. Il faut juste se poser les bonnes questions : quelles sont mes limites ? Quels sont mes
+                        besoins
+                        ? Ne pas oublier surtout qu’il faudra vous construire ce voyage vous-même. Les informations se
+                        font rares sur la toile,
                         même si d’intrépides blogueurs et blogueuses se sont lancés
-                    <div class="btn"><a href="#"></a>LIRE LA
-                        SUITE</a></div>
+                    <div class="btn"><a href="#">LIRE LA
+                            SUITE</a></div>
                     </p>
                 </article>
 

@@ -97,9 +97,25 @@
   }
 
   .info-sejour {
-    display: block;
-    flex-direction: column;
-    flex-wrap: nowrap
+
+    min-width: 120px;
+
+    .nuitees{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img{
+        width:30px;
+      }
+    }
+    .tarif{
+      text-align: center;
+      .prix{
+        font-size: 1.2rem;
+        color: $orange;
+      }
+    }
+
   }
 }
 
@@ -143,12 +159,12 @@
   h2 {
 
     color: white;
+    .tem-infos {
+      justify-content: center;
+    }
   }
 
-h6 {
 
-  flex-wrap: wrap;
-}
   .temoignages-content {
     display: flex;
     flex-wrap: wrap;

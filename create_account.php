@@ -14,7 +14,9 @@ getHeader("Créer un compte", "Formulaire de création de compte")
 
 <main class="container">
 
-<form action="create_account_query.php" method="post">
+    <h1>Inscription</h1>
+
+<form class="form-create-account" action="create_account_query.php" method="post">
     <p>
         <label>Nom</label>
         <input type="text" name="nom" placeholder="Nom" required>
@@ -35,7 +37,7 @@ getHeader("Créer un compte", "Formulaire de création de compte")
         <label>Mot de passe</label>
         <input type="password" name="mot_de_passe" required>
     </p>
-    <input type="submit" value="Créer mon compte">
+    <input class="btn" type="submit" value="Créer mon compte">
 
 </form>
 </main>

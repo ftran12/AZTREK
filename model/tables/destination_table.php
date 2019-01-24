@@ -20,24 +20,27 @@ function getAllSejoursByPays(int $id)
 
 }
 
-function insertDestination(string $titre)
+function insertDestination(string $titre, string $image)
 {
     global $connection;
 
-    $query = "INSERT INTO destination (titre) VALUES (:titre)";
+    $query = "INSERT INTO destination (titre, image) VALUES (:titre, :image)";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":titre", $titre);
+    $stmt->bindParam(":image", $image);
     $stmt->execute();
 }
 
-function updateDestination(int $id, string $titre)
+function updateDestination(int $id, string $titre, string $image)
 {
     global $connection;
-    $query = "UPDATE destination SET titre = :titre WHERE id= :id";
+    $query = "UPDATE destination SET titre = :titre, image = :image
+    WHERE id= :id";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":id", $id);
     $stmt->bindParam(":titre", $titre);
+    $stmt->bindParam(":image", $image);
     $stmt->execute();
 }

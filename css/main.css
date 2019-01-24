@@ -61,6 +61,17 @@ figure {
 .owl-carousel .owl-nav button.owl-next {
   right: 20px;
   background-image: url("../images/pictos/chevron-right.png"); }
+.owl-carousel .owl-nav html,
+.owl-carousel .owl-nav body {
+  height: 100%; }
+.owl-carousel .owl-nav body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5; }
 
 body {
   font-family: "Arial", sans-serif; }
@@ -243,7 +254,7 @@ a {
   .search-form button {
     font-size: 0;
     cursor: pointer;
-    padding: 0.75 1.5rem;
+    padding: 0.75rem 1.5rem;
     background: rgba(112, 112, 112, 0.5);
     margin: 10px; }
     .search-form button .fa {
@@ -252,6 +263,15 @@ a {
       background: rgba(112, 112, 112, 0.9); }
   .search-form ::placeholder {
     color: #422918; }
+
+.form-create-account {
+  width: 100%;
+  height: auto;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  font-size: 16px;
+  box-sizing: border-box; }
 
 /* 1. section search */
 .search-form-wrapper {
@@ -318,9 +338,18 @@ a {
       border-radius: 50px;
       left: 0; }
   .footer-article .info-sejour {
-    display: block;
-    flex-direction: column;
-    flex-wrap: nowrap; }
+    min-width: 120px; }
+    .footer-article .info-sejour .nuitees {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .footer-article .info-sejour .nuitees img {
+        width: 30px; }
+    .footer-article .info-sejour .tarif {
+      text-align: center; }
+      .footer-article .info-sejour .tarif .prix {
+        font-size: 1.2rem;
+        color: #F39200; }
 
 /* 4. section destinations */
 .destinations {
@@ -348,8 +377,8 @@ a {
   display: flex; }
   .temoignages h2 {
     color: white; }
-  .temoignages h6 {
-    flex-wrap: wrap; }
+    .temoignages h2 .tem-infos {
+      justify-content: center; }
   .temoignages .temoignages-content {
     display: flex;
     flex-wrap: wrap;
@@ -546,16 +575,32 @@ td:nth-last-of-type(2) {
   color: #00f;
   font-family: 'monaco normal', monospace; }
 
+.btn-wrapper {
+  text-align: center; }
+  .btn-wrapper a {
+    display: inline-block;
+    padding: .875rem 2rem;
+    background-color: #F39200;
+    color: white;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: .3s; }
+    .btn-wrapper a:hover, .btn-wrapper a:focus {
+      background-color: #8d5500;
+      text-decoration: none; }
+
 .btn {
-  display: inline-block;
-  padding: .875rem 2rem;
-  background-color: #F39200;
-  color: white;
-  border-radius: 4px;
-  transition: .3s; }
-  .btn:hover, .btn:focus {
-    background-color: #8d5500;
-    text-decoration: none; }
+  text-align: center; }
+  .btn a {
+    display: inline-block;
+    padding: .875rem 2rem;
+    background-color: #F39200;
+    color: white;
+    border-radius: 4px;
+    transition: .3s; }
+    .btn a:hover, .btn a:focus {
+      background-color: #8d5500;
+      text-decoration: none; }
 
 .btn-off {
   display: inline-block;
