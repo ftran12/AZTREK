@@ -4,27 +4,38 @@
     padding: 2rem;
     margin: 0 auto;
 
+
     input,
     button {
 
         border: 0;
         padding: .75rem 1.5rem;
         transition: background .3s;
+        font-size: 1.5rem;
+        margin: 0 auto;
+
+
+
     }
 
     input:focus {}
 
     button {
+
         font-size: 0;
         cursor: pointer;
-        padding: 0 1rem;
+        padding: 0.75 1.5rem;
+        background: rgba($light-grey, .5);
+        margin: 10px;
+
 
         .fa {
             font-size: 1.5rem;
+
         }
 
         &:hover {
-            background: rgba($light-grey, .8)
+            background: rgba($light-grey, .9)
         }
     }
 

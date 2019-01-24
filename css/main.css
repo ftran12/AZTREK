@@ -159,6 +159,7 @@ a {
       .main-menu a {
         display: block;
         color: #fff;
+        font-size: 1.5rem;
         padding: 2.5rem;
         margin: 0 2rem; }
         .main-menu a:hover, .main-menu a:focus {
@@ -236,15 +237,19 @@ a {
   .search-form button {
     border: 0;
     padding: .75rem 1.5rem;
-    transition: background .3s; }
+    transition: background .3s;
+    font-size: 1.5rem;
+    margin: 0 auto; }
   .search-form button {
     font-size: 0;
     cursor: pointer;
-    padding: 0 1rem; }
+    padding: 0.75 1.5rem;
+    background: rgba(112, 112, 112, 0.5);
+    margin: 10px; }
     .search-form button .fa {
       font-size: 1.5rem; }
     .search-form button:hover {
-      background: rgba(112, 112, 112, 0.8); }
+      background: rgba(112, 112, 112, 0.9); }
   .search-form ::placeholder {
     color: #422918; }
 
@@ -431,7 +436,14 @@ a {
   flex-direction: column;
   background: url(../images/bg_destinations.jpg);
   background-size: cover;
-  height: 500px; }
+  height: 800px; }
+
+h4.special {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 30px;
+  margin: 30px;
+  color: #6B472D; }
 
 .destinations-content {
   display: flex;
@@ -448,12 +460,19 @@ a {
       font-size: 0.75rem; }
       @media (min-width: 768px) {
         .destinations-content .sejour-teasing .circuit-name {
-          right: 30px;
-          top: 200px;
+          bottom: 10px;
+          padding: 10px;
           font-size: 1.15rem; } }
+      @media (min-width: 1600px) {
+        .destinations-content .sejour-teasing .circuit-name {
+          top: 250px;
+          right: 20px;
+          padding: 10px;
+          font-size: 1.50rem; } }
 
 .destinations-content img {
-  padding: 15px; }
+  padding: 30px 10px 10px;
+  max-width: 600px; }
 
 /* 09. SEJOURS */
 .header-article-sejour {

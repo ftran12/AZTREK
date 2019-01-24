@@ -65,5 +65,15 @@ function insertSejour(string $titre, string $image,int $duree, string $descripti
 }
 
 
+function updateSejour(int $id, $titre){
+    global $connection;
+    $query = "UPDATE sejour SET titre = :titre WHERE id = :id";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->bindParam("titre", $titre);
+    $stmt->execute();
+}
+
 
 

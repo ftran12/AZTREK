@@ -19,7 +19,7 @@ require_once '../../layout/header.php';
         <select name="destination_id" class="form-control">
             <?php foreach ($destinations as $destination) : ?>
                 <option value="<?php echo $destination["id"]; ?>">
-                    <?php echo $destination["libelle"]; ?>
+                    <?php echo $destination["titre"]; ?>
                 </option>
             <?php endforeach; ?>
         </select>

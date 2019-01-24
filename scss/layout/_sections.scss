@@ -1,286 +1,282 @@
 /* 1. section search */
 .search-form-wrapper {
-    background-color: $orange;
-    box-sizing: border-box;
-    width: 100%;
+  background-color: $orange;
+  box-sizing: border-box;
+  width: 100%;
 
 }
 
 .fa-search {
-    font-size: 20px;
-    color: $white;
+  font-size: 20px;
+  color: $white;
 }
 
 /* 2. section voyages*/
 .slider-voyages {
-    background: url(../images/bg_voyages.jpg);
-    background-size: cover;
+  background: url(../images/bg_voyages.jpg);
+  background-size: cover;
 
-    h2 {
-        color: $white;
-    }
+  h2 {
+    color: $white;
+  }
 }
 
 
-
 .slider-voyages h2 {
-    margin: 0 auto;
-    padding: 1.5rem;
-    color: $white;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: $white;
 }
 
 /* 3. section liste de séjours */
 .liste_voyages {
-    .voyages {
+  .voyages {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .voyage-item {
+      padding: 20px;
+
+
+      .voyage-sejour {
+        position: relative;
         display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
 
-        .voyage-item {
-            padding: 20px;
+      }
 
+      .title-voyage {
+        position: absolute;
+        bottom: 1rem;
+        padding: 10px;
+        margin: 0 auto;
 
-            .voyage-sejour {
-                position: relative;
-                display: flex;
-
-            }
-
-            .title-voyage {
-                position: absolute;
-                bottom: 1rem;
-                padding: 10px;
-                margin: 0 auto;
-
-                h3,
-                h4
-                    {
-                    margin: 0 auto;
-                    font-family: $font-default;
-                }
-            }
-
-            @media (min-width: $bp-medium) {
-                flex-basis: 50%;
-            }
+        h3,
+        h4 {
+          margin: 0 auto;
+          font-family: $font-default;
         }
+      }
+
+      @media (min-width: $bp-medium) {
+        flex-basis: 50%;
+      }
     }
+  }
 }
 
 
 .social-actions {
-    position: absolute;
-    display: flex;
-    right: 15px;
-    top: 15px;
+  position: absolute;
+  display: flex;
+  right: 15px;
+  top: 15px;
 
-    a {
-        display: block;
-        padding: 0.5rem;
-        background: rgba(255, 255, 255, 0.651);
-        border-radius: 10px;
-        margin-left: 1rem;
-    }
+  a {
+    display: block;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.651);
+    border-radius: 10px;
+    margin-left: 1rem;
+  }
 
 }
 
 .footer-article {
-    box-shadow: 0px 0px 5px 0px #CCC;
+  box-shadow: 0px 0px 5px 0px #CCC;
 
-    .social-pic {
-        display: flex;
+  .social-pic {
+    display: flex;
 
-        img {
-            border-radius: 50px;
-            left: 0;
-        }
-
-
+    img {
+      border-radius: 50px;
+      left: 0;
     }
 
-    .info-sejour {
-        display: block;
-        flex-direction: column;
-        flex-wrap: nowrap
-    }
+
+  }
+
+  .info-sejour {
+    display: block;
+    flex-direction: column;
+    flex-wrap: nowrap
+  }
 }
-
 
 
 /* 4. section destinations */
 .destinations {
-    background: url(../images/bg_destinations.jpg);
-    background-size: cover;
-    height: 500px;
+  background: url(../images/bg_destinations.jpg);
+  background-size: cover;
+  height: 500px;
 
-    h2 {
-        padding: 20px;
-    }
+  h2 {
+    padding: 20px;
+  }
 }
 
 /* footer voyage */
 .footer-article {
-    display: flex;
-    padding: 10px;
-    border-color: grey;
+  display: flex;
+  padding: 10px;
+  border-color: grey;
 
-    .fans_interesses {
-        margin: 0 auto;
+  .fans_interesses {
+    margin: 0 auto;
 
-    }
+  }
 
-    .social-pic {
-        max-width: 50%;
-        padding: 0;
+  .social-pic {
+    max-width: 50%;
+    padding: 0;
 
-    }
+  }
 
 }
 
 /* 5. section temoignages */
 
 .temoignages {
-    background-color: #707070;
-    padding: 40px 0;
+  background-color: #707070;
+  padding: 40px 0;
 
-    h2 {
-        color: white;
+  h2 {
+    color: white;
+  }
+
+  .temoignages-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    article {
+      flex-basis: 100%;
+
+      @media (min-width: $bp-medium) {
+        flex-basis: 48%;
+      }
     }
 
-    .temoignages-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+  }
 
-        article {
-            flex-basis: 100%;
-
-            @media (min-width: $bp-medium) {
-                flex-basis: 48%;
-            }
-        }
-
-    }
-
-    .temoignage {
-        display: flex;
-        flex-wrap: wrap;
-        border-width: 1px 1px 1px 1px;
-        border-style: solid;
-        border-color: white;
-        margin: 10px;
-        padding: 10px;
+  .temoignage {
+    display: flex;
+    flex-wrap: wrap;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: white;
+    margin: 10px;
+    padding: 10px;
 
 
-    }
+  }
 
-    .pic-tem img {
-        border-radius: 50%;
-    }
+  .pic-tem img {
+    border-radius: 50%;
+  }
 }
 
 /* 6. section communaute aztrek */
 
 .communaute {
-    h2 {
-        padding: 10px;
-    }
+  h2 {
+    padding: 10px;
+  }
 }
 
 .communaute-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
 
+  article {
+    flex-basis: 100%;
+  }
 
-    article {
-        flex-basis: 100%;
+  @media (min-width: $bp-medium) {
+    .blog {
+      flex-basis: 50%;
     }
 
-    @media (min-width: $bp-medium) {
-        .blog {
-            flex-basis: 50%;
-        }
-
-        .instaztrek {
-            flex-basis: 40%;
-        }
-
+    .instaztrek {
+      flex-basis: 40%;
     }
+
+  }
 
 }
 
 .blog {
-    border-width: 1px 1px 1px 1px;
-    border-style: solid;
-    border-color: $light-grey;
-    margin: 10px;
-    padding: 10px;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: $light-grey;
+  margin: 10px;
+  padding: 10px;
 
-    h3,
-    h4 {
-        text-align: center;
-    }
+  h3,
+  h4 {
+    text-align: center;
+  }
 }
 
 .instaztrek {
 
-    border-width: 1px 1px 1px 1px;
-    border-style: solid;
-    border-color: $light-grey;
-    margin: 10px;
-    padding: 10px;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: $light-grey;
+  margin: 10px;
+  padding: 10px;
 
-    h3 {
-        text-align: center;
+  h3 {
+    text-align: center;
 
+  }
+
+  .flux-insta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+    figure {
+      margin-bottom: 10px;
     }
-
-    .flux-insta {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-
-
-        figure {
-            margin-bottom: 10px;
-        }
-    }
+  }
 }
 
 /* 7. section garanties */
 
 .garanties {
-    background: url(../images/bg_garanties.jpg);
-    background-size: cover;
-    height: 300px;
+  background: url(../images/bg_garanties.jpg);
+  background-size: cover;
+  height: 300px;
 
-    h2 {
-        padding: 20px;
-    }
+  h2 {
+    padding: 20px;
+  }
 }
 
 .garanties_details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+
+  li {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
+    flex-basis: 20%;
+    text-align: center;
 
+  }
 
-    li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-basis: 20%;
-        text-align: center;
+  img {
+    max-height: 100px;
+    max-width: 100px;
 
-    }
-
-    img {
-        max-height: 100px;
-        max-width: 100px;
-
-    }
+  }
 
 
 }
@@ -290,150 +286,158 @@
 /* 8. DESTINATIONS */
 
 .section-destinations {
-    display: flex;
-    flex-direction: column;
-    background: url(../images/bg_destinations.jpg);
-    background-size: cover;
-    height: 500px;
+  display: flex;
+  flex-direction: column;
+  background: url(../images/bg_destinations.jpg);
+  background-size: cover;
+  height: 800px;
 }
-
+h4.special {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 30px;
+  margin: 30px;
+  color: $light-brown;
+}
 .destinations-content {
+  display: flex;
+  flex-basis: 33%;
+  justify-content: space-around;
+
+  .sejour-teasing {
     display: flex;
-    flex-basis: 33%;
-    justify-content: space-around;
-
-    .sejour-teasing {
-        display: flex;
-        position: relative;
-        color: white;
+    position: relative;
+    color: white;
 
 
-        .circuit-name {
-            position: absolute;
-            right: 20px;
-            top: 100px;
-            font-size: 0.75rem;
+    .circuit-name {
+      position: absolute;
+      right: 20px;
+      top: 100px;
+      font-size: 0.75rem;
 
-            @media (min-width: $bp-medium){
-            right: 30px;
-            top: 200px;
-            font-size: 1.15rem;
-        }
-        }
+      @media (min-width: $bp-medium) {
+        bottom: 10px;
+        padding: 10px;
+        font-size: 1.15rem;
+      }
+        @media (min-width:$max-width) {
+          top: 250px;
+          right: 20px;
+          padding: 10px;
+          font-size: 1.50rem;
+
+      }
     }
+  }
 
 }
 
 .destinations-content img {
-    padding: 15px;
+  padding: 30px 10px 10px;
+  max-width: 600px;
 
 
-    // 
+  //
 }
-
 
 
 /* 09. SEJOURS */
 
 
-
 .header-article-sejour {
-    display: flex;
-    padding: 0px;
-    border-color: grey;
-    width: 100%;
-    height: 50px;
-    border: 10px;
+  display: flex;
+  padding: 0px;
+  border-color: grey;
+  width: 100%;
+  height: 50px;
+  border: 10px;
 
-    .nuitees,
-    .tarif,
-    .niveau {
-        padding: 0 10px;
-        margin: 0 10px;
+  .nuitees,
+  .tarif,
+  .niveau {
+    padding: 0 10px;
+    margin: 0 10px;
 
-        i {
-            font-size: 2rem;
-        }
-
+    i {
+      font-size: 2rem;
     }
+
+  }
 }
 
 .section-sejours {
 
 
-    .voyage-sejour-detail {
-        display: flex;
+  .voyage-sejour-detail {
+    display: flex;
 
-        .descr-voyage {
-            padding: 0 10px;
-        }
-
-        @media (min-width: $bp-medium) {
-            display: flex;
-            flex-wrap: wrap;
-
-            .img-wrapper {
-                flex-basis: 40%;
-            }
-
-            .descr-voyage {
-                flex-basis: 60%;
-
-                .descr-voyage h3 {
-                    margin: 0 auto;
-                    color: $orange;
-
-                }
-            }
-        }
+    .descr-voyage {
+      padding: 0 10px;
     }
+
+    @media (min-width: $bp-medium) {
+      display: flex;
+      flex-wrap: wrap;
+
+      .img-wrapper {
+        flex-basis: 40%;
+      }
+
+      .descr-voyage {
+        flex-basis: 60%;
+
+        .descr-voyage h3 {
+          margin: 0 auto;
+          color: $orange;
+
+        }
+      }
+    }
+  }
 
 }
 
 
-
-
-
-
 table a {
-    color: black;
+  color: black;
 }
 
 table {
 
-    width: 70%;
-    margin: 40px auto;
-    border-collapse: collapse;
+  width: 70%;
+  margin: 40px auto;
+  border-collapse: collapse;
 }
 
 tr:nth-of-type(odd) {
-    background-color: #eee
+  background-color: #eee
 }
 
 th,
 td {
-    border: 1px solid #ccc;
-    padding: 20px 15px;
-    text-align: center;
+  border: 1px solid #ccc;
+  padding: 20px 15px;
+  text-align: center;
 }
 
 th {
-    background-color: #ccc;
-    border: 1px solid $white;
-    color: #fff;
-    text-align: left;
-    text-align: center;
+  background-color: #ccc;
+  border: 1px solid $white;
+  color: #fff;
+  text-align: left;
+  text-align: center;
 
 }
 
 td:nth-of-type(1),
 td:nth-last-of-type(2) {
-    color: red;
-    font-family: $font-default;
-    width: 20%;
+  color: red;
+  font-family: $font-default;
+  width: 20%;
 }
 
 .code-html {
-    color: #00f;
-    font-family: 'monaco normal', monospace;
+  color: #00f;
+  font-family: 'monaco normal', monospace;
 }

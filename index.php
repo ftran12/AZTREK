@@ -96,7 +96,7 @@ getHeader("Accueil", "Aztrek")
                         <div class="like"><a href="#"> <img src="images/pictos/heart.png" alt="like"></a></div>
                         <div class="share"><a href="#"> <img src="images/pictos/share.png" alt="share"></a></div>
                     </div>
-                    <div class="zoom-effect"><a href="#">
+                    <div><a href="#">
                             <img src="images/voyage_mexique.jpg" alt="voyage au Mexique">
                         </a>
                     </div>
@@ -241,7 +241,7 @@ getHeader("Accueil", "Aztrek")
             </article>
         </div>
 
-        <button type="button" name="submit-btn">Lire la suite</button>
+        <button class= "btn" type="button" name="submit-btn">LIRE LA SUITE</button>
     </section>
     </section>
 

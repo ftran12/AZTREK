@@ -23,9 +23,9 @@ getHeader("Accueil", "Aztrek")
 
         <article class="voyage-sejour-detail">
             <header class="header-article-sejour">
-                <div class="nuitees"><a href="#"><i class="far fa-calendar-alt"></i></a> <?= $sejour["duree"]; ?></div>
+                <div class="nuitees"><a href="#"><i class="far fa-calendar-alt"></i></a> <?= $sejour["duree"]; ?> jours</div>
                 <div class="tarif"><a href="#"><i class="fas fa-euro-sign"></i></a> à
-                    partir <?= $sejour["prix_indicatif"]; ?>€
+                    partir <?= $sejour["prix_indicatif"]; ?>€*
                 </div>
                 <div class="niveau"><a href="#"><i class="fas fa-signal"></i></a> <?= $sejour["difficulte_libelle"]; ?>
                     (niveau <?= $sejour["difficulte_niveau"]; ?>/5)
@@ -60,18 +60,18 @@ getHeader("Accueil", "Aztrek")
                     <?php elseif ($depart["places"] <= 2 & $depart["places"] > 0): ?>
                         <td>Plus que <?= $depart["places"]; ?> places</td>
                  <?php else : ;?>
-                    <td>plus de place</td>
+                    <td>__</td>
             <?php endif; ?>
         <?php if ($depart["places"] > 0): ?>
                 <td ><a class="btn" href="#">S'INSCRIRE</a></td>
         <?php else : ;?>
-            <td ><a href="#">EPUISE</a></td>
+            <td ><a href="#">COMPLET</a></td>
         <?php endif; ?>
             </tr>
             <?php endforeach; ?>
     </table>
 <?php else: ?>
-    <h4>Plus de séjour disponible pour cette destination</h4>
+    <h4 class="special">Plus de séjour disponible pour cette destination</h4>
 <?php endif; ?>
 
 <?php getFooter(); ?>
