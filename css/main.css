@@ -344,12 +344,16 @@ a {
 /* 5. section temoignages */
 .temoignages {
   background-color: #707070;
-  padding: 40px 0; }
+  padding: 40px 0;
+  display: flex; }
   .temoignages h2 {
     color: white; }
+  .temoignages h6 {
+    flex-wrap: wrap; }
   .temoignages .temoignages-content {
     display: flex;
     flex-wrap: wrap;
+    color: #FFFFFF;
     justify-content: space-around; }
     .temoignages .temoignages-content article {
       flex-basis: 100%; }
@@ -379,9 +383,9 @@ a {
     flex-basis: 100%; }
   @media (min-width: 768px) {
     .communaute-content .blog {
-      flex-basis: 50%; }
+      flex-basis: 35%; }
     .communaute-content .instaztrek {
-      flex-basis: 40%; } }
+      flex-basis: 50%; } }
 
 .blog {
   border-width: 1px 1px 1px 1px;

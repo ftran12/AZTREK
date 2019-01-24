@@ -139,14 +139,20 @@
 .temoignages {
   background-color: #707070;
   padding: 40px 0;
-
+  display: flex;
   h2 {
+
     color: white;
   }
 
+h6 {
+
+  flex-wrap: wrap;
+}
   .temoignages-content {
     display: flex;
     flex-wrap: wrap;
+    color: $white;
     justify-content: space-around;
 
     article {
@@ -155,6 +161,7 @@
       @media (min-width: $bp-medium) {
         flex-basis: 48%;
       }
+
     }
 
   }
@@ -196,11 +203,11 @@
 
   @media (min-width: $bp-medium) {
     .blog {
-      flex-basis: 50%;
+      flex-basis: 35%;
     }
 
     .instaztrek {
-      flex-basis: 40%;
+      flex-basis: 50%;
     }
 
   }

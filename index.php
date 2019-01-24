@@ -2,6 +2,9 @@
 require_once "model/database.php";
 require_once "functions.php";
 
+$destinations = getAllEntities("destination");
+
+
 getHeader("Accueil", "Aztrek")
 ?>
 
@@ -249,40 +252,16 @@ getHeader("Accueil", "Aztrek")
         <div class="container">
             <h2>Nos destinations</h2>
             <div class="owl-dest owl-carousel owl-theme">
+                <?php foreach ($destinations as $destination) : ?>
                 <article class="item zoom">
-                    <div class="item-img"><a href="#"><img src="images/destination_mexique.jpg" alt=""></a></div>
-                    <div class="item-infos"><a href="#">
-                            <h3>Mexique</h3>
+                    <div class="item-img"><a href="page-destination.php?id=<?= $destination["id"]; ?>">
+                    <img src="/images/destination_<?= $destination["titre"]; ?>.jpg" alt=""></a></div>
+                    <div class="item-infos"><a href="page-destination.php?id=<?= $destination["id"]; ?>">
+                            <h3><?= $destination["titre"]; ?></h3>
                         </a>
                     </div>
                 </article>
-                <article class="item zoom">
-                    <div class="item-img"><a href="#"><img src="images/destination_guatemala.jpg" alt=""></a></div>
-                    <div class="item-infos"><a href="#">
-                            <h3>Guatemala</h3>
-                        </a>
-                    </div>
-                </article>
-                <article class="item zoom">
-                    <div class="item-img"><a href="#"><img src="images/destination_costa.jpg" alt=""></a></div>
-                    <div class="item-infos"><a href="#">
-                            <h3>Costa Rica</h3>
-                        </a>
-                    </div>
-                </article>
-                <article class="item zoom">
-                    <div class="item-img"><a href="#"><img src="images/destination_salvador.jpg" alt=""></a></div>
-                    <div class="item-infos"><a href="#">
-                            <h3>Salvador</h3>
-                        </a>
-                    </div>
-                </article>
-                <article class="item zoom">
-                    <div class="item-img"><a href="#"><img src="images/destination_honduras.jpg" alt=""></a></div>
-                    <div class="item-infos"><a href="#">
-                            <h3>Honduras</h3>
-                        </a>
-                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -298,7 +277,7 @@ getHeader("Accueil", "Aztrek")
                 <article class="temoignage">
                     <div class="pic-tem"><a href="#"><img src="images/temoignage-1.jpg" alt=""></a></div>
                     <h4>Fibrou</h4>
-                    <p>Costa Rica - Jungle Speed <br> Voyage le 16 août 2018</p>
+                    <h6>Costa Rica - Jungle Speed <br> Voyage le 16 août 2018</h6>
                     <p class="tem-1">Super voyage ! on a particulièrement apprécié l’organisation du trek et le guide
                         Daniel qui nous a montré des spots hors des sentiers battus. Je recommande l’agence Aztrek qui
                 </article>
@@ -306,7 +285,7 @@ getHeader("Accueil", "Aztrek")
                 <article class="temoignage">
                     <div class="pic-tem"><a href="#"><img src="images/temoignage-2.jpg" alt=""></a></div>
                     <h4>JCT</h4>
-                    <p>Guatemala - Quetzal Sensation <br> Voyage le 12 juillet 2018</p>
+                    <h6>Guatemala - Quetzal Sensation <br> Voyage le 12 juillet 2018</h6>
                     <p class="tem-2">
                         Rien à dire, la programmation était bien ficelée, chaque jour a son lot de bonnes
                         surprises. Super pays, à recommander.
