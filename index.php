@@ -96,7 +96,7 @@ getHeader("Accueil", "Aztrek")
             <article class="voyage-item">
                 <div class="voyage-sejour">
                     <div class="social-actions">
-                        <div class="like"><a href="#"> <img src="images/pictos/heart.png" alt="like"></a></div>
+                        <div class="like"><a href="<?= SITE_URL . "create_account.php"; ?>"> <img src="images/pictos/heart.png" alt="like"></a></div>
                         <div class="share"><a href="#"> <img src="images/pictos/share.png" alt="share"></a></div>
                     </div>
                     <div><a href="#">
@@ -138,7 +138,7 @@ getHeader("Accueil", "Aztrek")
                 <div class="voyage-sejour">
                     <div class="social-actions">
                         <div class="like"><a href="#"> <img src="images/pictos/heart.png" alt="like"></a></div>
-                        <div class="share"><a href="#"> <img src="images/pictos/share.png" alt="share"></a></div>
+                        <div class="share"><a href="create_account.php"> <img src="images/pictos/share.png" alt="share"></a></div>
                     </div>
                     <a href="#">
                         <img src="images/salvador_human.jpg" alt="voyage au Salvador"></a>
@@ -268,7 +268,7 @@ getHeader("Accueil", "Aztrek")
                 <?php foreach ($destinations as $destination) : ?>
                     <article class="item zoom">
                         <div class="item-img"><a href="page-destination.php?id=<?= $destination["id"]; ?>">
-                                <img src="images/<?= $destination["image"]; ?>" alt="Destination"></a></div>
+                                <img src="uploads/<?= $destination["image"]; ?>" alt="Destination"></a></div>
                         <div class="item-infos"><a href="page-destination.php?id=<?= $destination["id"]; ?>">
                                 <h3><?= $destination["titre"]; ?></h3>
                             </a>

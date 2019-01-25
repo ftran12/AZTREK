@@ -114,8 +114,7 @@ h4 {
   color: #FFFFFF; }
 
 .btn a {
-  font-family: "Arial", sans-serif;
-  text-decoration: underline; }
+  font-family: "Arial", sans-serif; }
 
 a {
   color: #F39200;
@@ -580,6 +579,7 @@ td:nth-last-of-type(2) {
   .btn-wrapper a {
     display: inline-block;
     padding: .875rem 2rem;
+    margin: 20px;
     background-color: #F39200;
     color: white;
     border-radius: 4px;

@@ -32,7 +32,7 @@ function getAllEntities(string $table)
     return $stmt->fetchAll();
 }
 
-function getOneEntity(string $table, int $id): array
+function getOneEntity(string $table, int $id)
 {
     global $connection;
 

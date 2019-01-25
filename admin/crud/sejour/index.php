@@ -56,7 +56,7 @@ require_once '../../layout/header.php';
                 </td>
                 <td><?php echo $sejour['duree']; ?></td>
                 <td><?php echo $sejour['prix_indicatif']; ?></td>
-                <td><?php echo substr($sejour['description'], 0, 100); ?>...</td>
+                <td><?php echo $sejour['description']; ?>...</td>
                 <td><?php echo $sejour['destination_id']; ?></td>
                 <td class="actions">
                     <a href="update.php?id=<?php echo $sejour['id']; ?>" class="btn btn-warning">

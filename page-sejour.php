@@ -4,8 +4,8 @@ require_once "functions.php";
 
 
 $id = $_GET["id"];
-$sejour = getOneSejour($id);
 $destination = getOneEntity("destination", $id);
+$sejour = getOneSejour($id);
 $departs = getAllDepartBySejour($id);
 
 
@@ -16,7 +16,7 @@ getHeader("Accueil", "Aztrek")
 
         <?php getMenu(); ?>
     </header>
-    <h2>Destination : <?= $destination["titre"]; ?></h2>
+
     <h1><?= $sejour["titre"]; ?></h1>
 
     <section class="container section-sejours">
@@ -71,7 +71,7 @@ getHeader("Accueil", "Aztrek")
             <?php endforeach; ?>
     </table>
 <?php else: ?>
-    <h4 class="special">Plus de séjour disponible pour cette destination</h4>
+    <h4 class="special">Pas de séjour disponible pour cette destination </h4>
 <?php endif; ?>
 
 <?php getFooter(); ?>

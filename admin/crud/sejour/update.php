@@ -39,7 +39,7 @@ require_once '../../layout/header.php';
     </div>
     <div class="form-group">
         <label>Durée</label>
-        <input type="number" name="duree" class="form-control" required>
+        <input type="number" name="duree" value="<?php echo $sejour["duree"]; ?>"class="form-control" placeholder="Durée en jours">
     </div>
 
     <div class="form-group">
@@ -54,7 +54,7 @@ require_once '../../layout/header.php';
     </div>
     <div class="form-group">
         <label>Prix</label>
-        <input type="number" name="prix_indicatif" class="form-control" required>
+        <input type="number" name="prix_indicatif" value="<?php echo $sejour["prix_indicatif"]; ?>" class="form-control">
     </div>
 
     <input type="hidden" name="id" value="<?php echo $id; ?>"> 

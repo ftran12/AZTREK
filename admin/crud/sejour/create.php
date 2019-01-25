@@ -30,11 +30,11 @@ require_once '../../layout/header.php';
     </div>
     <div class="form-group">
         <label>Description</label>
-        <textarea name="description" class="form-control"></textarea>
+        <textarea name="description" class="form-control" placeholder="Description du séjour"></textarea>
     </div>
     <div class="form-group">
         <label>Durée</label>
-        <input type="number" name="duree" class="form-control" required>
+        <input type="number" name="duree" class="form-control" placeholder="Durée en jours" required>
     </div>
     <div class="form-group">
         <label>Difficulté</label>
@@ -48,7 +48,7 @@ require_once '../../layout/header.php';
     </div>
     <div class="form-group">
         <label>Prix</label>
-        <input type="number" name="prix_indicatif" class="form-control" required>
+        <input type="number" name="prix_indicatif" class="form-control" placeholder="Prix du séjour" required>
     </div>
     <button type="submit" class="btn btn-success">
         <i class="fa fa-check"></i>
